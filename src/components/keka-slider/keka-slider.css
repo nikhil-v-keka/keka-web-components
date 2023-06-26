@@ -2,30 +2,30 @@
   display: block;
 }
 
-.wrapper{
+.wrapper {
   width: 320px;
   margin: 0px;
   padding: 0px;
 }
 
-.slider{
+.slider {
   height: 8px;
   position: relative;
-  background: #EAECF0;
+  background: #eaecf0;
   border-radius: 4px;
 }
-.slider .progress{
+.slider .progress {
   height: 100%;
   position: absolute;
   border-radius: 4px;
-  background: #7F56D9;
+  background: #7f56d9;
 }
-.slider-range-input{
+.slider-range-input {
   position: relative;
   width: 100%;
 }
 
-.slider-range-input input{
+.slider-range-input input {
   position: absolute;
   width: 100%;
   height: 8px;
@@ -34,22 +34,22 @@
   pointer-events: none;
   -webkit-appearance: none;
 }
-input[type="range"]::-webkit-slider-thumb , input[type="range"]::-moz-range-thumb{
+input[type='range']::-webkit-slider-thumb,
+input[type='range']::-moz-range-thumb {
   height: 24px;
   width: 24px;
   border-radius: 50%;
   background: #fff;
-  border: 1px solid #7F56D9;
+  border: 1px solid #7f56d9;
   pointer-events: auto;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-
-.m-8{
+.m-8 {
   margin-top: 8px;
 }
-.progress-values{
+.progress-values {
   font-size: 16px;
   line-height: 24px;
   display: flex;
@@ -58,12 +58,12 @@ input[type="range"]::-webkit-slider-thumb , input[type="range"]::-moz-range-thum
   /* margin: 8px; */
 }
 
-.left-value{
+.left-value {
   position: relative;
   left: 0%;
 }
 
-.right-value{
-  position:relative;
+.right-value {
+  position: relative;
   left: 100%;
 }

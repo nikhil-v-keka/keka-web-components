@@ -26,14 +26,12 @@ export class MyComponent {
   //   return format(this.first, this.middle, this.last);
   // }
 
-  @Listen('onRangeChanged',{target:"document"})
-  getValues(event : CustomEvent){
+  @Listen('onRangeChanged', { target: 'document' })
+  getValues(event: CustomEvent) {
     console.log(event.detail);
   }
 
   render() {
-    return (
-      <keka-slider minValue={0} maxValue={100} minGap={10} left={20} right={70}></keka-slider>
-    )
+    return <keka-slider minValue={0} maxValue={100} minGap={10} left={20} right={70}></keka-slider>;
   }
 }
