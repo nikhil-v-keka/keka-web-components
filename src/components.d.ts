@@ -7,11 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface KekaSlider {
+        "displayValues": boolean;
         "left": number;
         "maxValue": number;
         "minGap": number;
         "minValue": number;
         "right": number;
+        "tooltip": boolean;
     }
     interface MyComponent {
         /**
@@ -52,12 +54,14 @@ declare global {
 }
 declare namespace LocalJSX {
     interface KekaSlider {
+        "displayValues"?: boolean;
         "left"?: number;
         "maxValue"?: number;
         "minGap"?: number;
         "minValue"?: number;
         "onOnRangeChanged"?: (event: KekaSliderCustomEvent<number[]>) => void;
         "right"?: number;
+        "tooltip"?: boolean;
     }
     interface MyComponent {
         /**
