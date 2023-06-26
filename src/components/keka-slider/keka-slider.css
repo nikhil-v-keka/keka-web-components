@@ -35,8 +35,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-input[type='range']::-webkit-slider-thumb
- {
+input[type='range']::-webkit-slider-thumb {
   height: 24px;
   width: 24px;
   border-radius: 50%;
@@ -45,7 +44,7 @@ input[type='range']::-webkit-slider-thumb
   pointer-events: auto;
   -webkit-appearance: none;
 }
-input[type='range']::-moz-range-thumb{
+input[type='range']::-moz-range-thumb {
   height: 24px;
   width: 24px;
   border-radius: 50%;
