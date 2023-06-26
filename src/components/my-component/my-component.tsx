@@ -1,5 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+import { Component, Prop, h, Listen } from '@stencil/core';
+// import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
@@ -22,11 +22,18 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
+  // private getText(): string {
+  //   return format(this.first, this.middle, this.last);
+  // }
+
+  @Listen('onRangeChanged',{target:"document"})
+  getValues(event : CustomEvent){
+    console.log(event.detail);
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return (
+      <keka-slider minValue={0} maxValue={100} minGap={10} left={20} right={70}></keka-slider>
+    )
   }
 }

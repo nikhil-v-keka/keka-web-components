@@ -6,6 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface KekaSlider {
+        "left": number;
+        "maxValue": number;
+        "minGap": number;
+        "minValue": number;
+        "right": number;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -21,7 +28,17 @@ export namespace Components {
         "middle": string;
     }
 }
+export interface KekaSliderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLKekaSliderElement;
+}
 declare global {
+    interface HTMLKekaSliderElement extends Components.KekaSlider, HTMLStencilElement {
+    }
+    var HTMLKekaSliderElement: {
+        prototype: HTMLKekaSliderElement;
+        new (): HTMLKekaSliderElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +46,19 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "keka-slider": HTMLKekaSliderElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface KekaSlider {
+        "left"?: number;
+        "maxValue"?: number;
+        "minGap"?: number;
+        "minValue"?: number;
+        "onOnRangeChanged"?: (event: KekaSliderCustomEvent<number[]>) => void;
+        "right"?: number;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +74,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "keka-slider": KekaSlider;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +82,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "keka-slider": LocalJSX.KekaSlider & JSXBase.HTMLAttributes<HTMLKekaSliderElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

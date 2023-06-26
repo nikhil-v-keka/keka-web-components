@@ -23,7 +23,10 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "lint":"npx eslint src",
+    "prettier":"npx prettier ",
+    "generate": "stencil generate",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@stencil/core": "^3.0.0"
@@ -31,9 +34,13 @@
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
-    "puppeteer": "^19.5.2"
+    "puppeteer": "^19.5.2",
+    "husky": "^8.0.0"
   },
   "license": "MIT"
 }
