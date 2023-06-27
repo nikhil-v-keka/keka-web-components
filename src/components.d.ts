@@ -15,6 +15,8 @@ export namespace Components {
         "right": number;
         "tooltip": boolean;
     }
+    interface KekaToggle {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -41,6 +43,12 @@ declare global {
         prototype: HTMLKekaSliderElement;
         new (): HTMLKekaSliderElement;
     };
+    interface HTMLKekaToggleElement extends Components.KekaToggle, HTMLStencilElement {
+    }
+    var HTMLKekaToggleElement: {
+        prototype: HTMLKekaToggleElement;
+        new (): HTMLKekaToggleElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -49,6 +57,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "keka-slider": HTMLKekaSliderElement;
+        "keka-toggle": HTMLKekaToggleElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -59,9 +68,11 @@ declare namespace LocalJSX {
         "maxValue"?: number;
         "minGap"?: number;
         "minValue"?: number;
-        "onOnRangeChanged"?: (event: KekaSliderCustomEvent<number[]>) => void;
+        "onRangeChanged"?: (event: KekaSliderCustomEvent<number[]>) => void;
         "right"?: number;
         "tooltip"?: boolean;
+    }
+    interface KekaToggle {
     }
     interface MyComponent {
         /**
@@ -79,6 +90,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "keka-slider": KekaSlider;
+        "keka-toggle": KekaToggle;
         "my-component": MyComponent;
     }
 }
@@ -87,6 +99,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "keka-slider": LocalJSX.KekaSlider & JSXBase.HTMLAttributes<HTMLKekaSliderElement>;
+            "keka-toggle": LocalJSX.KekaToggle & JSXBase.HTMLAttributes<HTMLKekaToggleElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

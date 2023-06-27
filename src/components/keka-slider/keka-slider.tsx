@@ -8,13 +8,13 @@ import { Component, EventEmitter, h, Host, Prop, Event, Element, State } from '@
 export class KekaSlider {
   @Prop() minValue = 0;
   @Prop() maxValue = 100;
-  @Prop() minGap = 0;
+  @Prop() minGap = 10;
   @Prop() left = 0;
   @Prop() right = 100;
-  @Prop() displayValues: boolean = true;
+  @Prop() displayValues: boolean = false;
   @Prop() tooltip: boolean = true;
 
-  @Event() onRangeChanged: EventEmitter<number[]>;
+  @Event() rangeChanged: EventEmitter<number[]>;
   @Element() el: HTMLElement;
 
   @State() leftPercentage = 0;
@@ -23,13 +23,17 @@ export class KekaSlider {
   rangeInputELements;
   progressValueElements;
 
+  componentWillLoad(){
+    this.calculatePercentage(this.left, this.right);
+    console.log(this.displayValues);
+    
+  }
   componentDidLoad() {
     this.progressElement = this.el.querySelector('.progress') as HTMLElement;
     this.rangeInputELements = Array.from(this.el.querySelectorAll('.range-input'), ele => ele as HTMLInputElement);
     this.progressValueElements = Array.from(this.el.querySelectorAll('.display'), ele => ele as HTMLElement);
-    this.calculatePercentage(this.left, this.right);
     this.setProgressBar();
-    this.setSliderValues();
+    if(this.displayValues) this.setSliderValues();
   }
 
   setProgressBar() {
@@ -59,7 +63,7 @@ export class KekaSlider {
     } else {
       this.calculatePercentage(currentLeftValue, currentRightValue);
       this.setProgressBar();
-      this.setSliderValues();
+      if(this.displayValues) this.setSliderValues();
       this.emitRangeValues(currentLeftValue, currentRightValue);
     }
   }
@@ -69,7 +73,7 @@ export class KekaSlider {
     this.right = right;
   }
   emitRangeValues(left: number, right: number) {
-    this.onRangeChanged.emit([left, right]);
+    this.rangeChanged.emit([left, right]);
   }
 
   render() {
@@ -89,9 +93,8 @@ export class KekaSlider {
               <div class="left-value display">{this.leftPercentage}%</div>
               <div class="right-value display">{this.rightPercentage}%</div>
             </div>
-          ) : (
-            ''
-          )}
+          ) : ('')
+          }
         </div>
         <slot></slot>
       </Host>

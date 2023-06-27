@@ -1,3 +1,7 @@
 :host {
   display: block;
 }
+
+.test keka-slider{
+  margin: 20px;
+}
