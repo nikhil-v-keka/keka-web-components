@@ -23,17 +23,16 @@ export class KekaSlider {
   rangeInputELements;
   progressValueElements;
 
-  componentWillLoad(){
+  componentWillLoad() {
     this.calculatePercentage(this.left, this.right);
     console.log(this.displayValues);
-    
   }
   componentDidLoad() {
     this.progressElement = this.el.querySelector('.progress') as HTMLElement;
     this.rangeInputELements = Array.from(this.el.querySelectorAll('.range-input'), ele => ele as HTMLInputElement);
     this.progressValueElements = Array.from(this.el.querySelectorAll('.display'), ele => ele as HTMLElement);
     this.setProgressBar();
-    if(this.displayValues) this.setSliderValues();
+    if (this.displayValues) this.setSliderValues();
   }
 
   setProgressBar() {
@@ -63,7 +62,7 @@ export class KekaSlider {
     } else {
       this.calculatePercentage(currentLeftValue, currentRightValue);
       this.setProgressBar();
-      if(this.displayValues) this.setSliderValues();
+      if (this.displayValues) this.setSliderValues();
       this.emitRangeValues(currentLeftValue, currentRightValue);
     }
   }
@@ -93,8 +92,9 @@ export class KekaSlider {
               <div class="left-value display">{this.leftPercentage}%</div>
               <div class="right-value display">{this.rightPercentage}%</div>
             </div>
-          ) : ('')
-          }
+          ) : (
+            ''
+          )}
         </div>
         <slot></slot>
       </Host>

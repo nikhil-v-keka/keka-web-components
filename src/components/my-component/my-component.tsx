@@ -30,9 +30,9 @@ export class MyComponent {
   // getValues(event: CustomEvent) {
   //   console.log(event.detail);
   // }
-getRangeValues(event:CustomEvent){
-  console.log(event.detail);
-}
+  getRangeValues(event: CustomEvent) {
+    console.log(event.detail);
+  }
   render() {
     return (
       <div class="test">
