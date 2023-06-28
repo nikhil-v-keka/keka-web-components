@@ -27,6 +27,7 @@ export class KekaSlider {
     this.calculatePercentage(this.left, this.right);
     console.log(this.displayValues);
   }
+
   componentDidLoad() {
     this.progressElement = this.el.querySelector('.progress') as HTMLElement;
     this.rangeInputELements = Array.from(this.el.querySelectorAll('.range-input'), ele => ele as HTMLInputElement);
@@ -54,12 +55,11 @@ export class KekaSlider {
       currentRightValue = parseInt(this.rangeInputELements[1].value);
 
     if (currentRightValue - currentLeftValue < this.minGap) {
-      //change the code
       if ((event.target as HTMLInputElement).className.includes('range-min'))
-        //min-gap is taken as value not as percentage
         this.rangeInputELements[0].value = currentRightValue - this.minGap;
       else this.rangeInputELements[1].value = currentLeftValue + this.minGap;
-    } else {
+    } 
+    else {
       this.calculatePercentage(currentLeftValue, currentRightValue);
       this.setProgressBar();
       if (this.displayValues) this.setSliderValues();

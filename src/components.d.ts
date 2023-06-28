@@ -16,6 +16,12 @@ export namespace Components {
         "tooltip": boolean;
     }
     interface KekaToggle {
+        "bordered": boolean;
+        "disabled": boolean;
+        "isActive": boolean;
+        "label": string;
+        "size": string;
+        "text": string;
     }
     interface MyComponent {
         /**
@@ -35,6 +41,10 @@ export namespace Components {
 export interface KekaSliderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLKekaSliderElement;
+}
+export interface KekaToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLKekaToggleElement;
 }
 declare global {
     interface HTMLKekaSliderElement extends Components.KekaSlider, HTMLStencilElement {
@@ -73,6 +83,13 @@ declare namespace LocalJSX {
         "tooltip"?: boolean;
     }
     interface KekaToggle {
+        "bordered"?: boolean;
+        "disabled"?: boolean;
+        "isActive"?: boolean;
+        "label"?: string;
+        "onToggleInput"?: (event: KekaToggleCustomEvent<boolean>) => void;
+        "size"?: string;
+        "text"?: string;
     }
     interface MyComponent {
         /**
