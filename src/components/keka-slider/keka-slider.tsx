@@ -55,11 +55,9 @@ export class KekaSlider {
       currentRightValue = parseInt(this.rangeInputELements[1].value);
 
     if (currentRightValue - currentLeftValue < this.minGap) {
-      if ((event.target as HTMLInputElement).className.includes('range-min'))
-        this.rangeInputELements[0].value = currentRightValue - this.minGap;
+      if ((event.target as HTMLInputElement).className.includes('range-min')) this.rangeInputELements[0].value = currentRightValue - this.minGap;
       else this.rangeInputELements[1].value = currentLeftValue + this.minGap;
-    } 
-    else {
+    } else {
       this.calculatePercentage(currentLeftValue, currentRightValue);
       this.setProgressBar();
       if (this.displayValues) this.setSliderValues();

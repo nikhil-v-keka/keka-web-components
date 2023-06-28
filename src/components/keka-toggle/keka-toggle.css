@@ -1,4 +1,4 @@
- :host {
+:host {
   display: block;
 }
 
@@ -6,7 +6,7 @@
   position: relative;
   display: inline-block;
 }
-.d-flex{
+.d-flex {
   display: flex;
 }
 /* .toggle-regular{
@@ -15,12 +15,12 @@
 .toggle-large{
   width: 80px;
 } */
-.regular{
+.regular {
   width: 36px;
   height: 20px;
 }
 
-.large{
+.large {
   width: 44px;
   height: 24px;
 }
@@ -37,54 +37,53 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #F2F4F7;
-  transition: .5s;
+  background-color: #f2f4f7;
+  transition: 0.5s;
   border-radius: 12px;
   padding: 2px;
 }
 
-.regular  .toggle-slider:before {
+.regular .toggle-slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 16px;
   width: 16px;
   background-color: white;
-  transition: .5s;
+  transition: 0.5s;
   border-radius: 50%;
 }
 
-.large  .toggle-slider:before {
+.large .toggle-slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 20px;
   width: 20px;
   background-color: white;
-  transition: .5s;
+  transition: 0.5s;
   border-radius: 50%;
 }
 
-input:hover +.toggle-slider{
-  background-color:  #EAECF0;
+input:hover + .toggle-slider {
+  background-color: #eaecf0;
 }
 
-input:disabled + .toggle-slider{
-  background: #F2F4F7;
+input:disabled + .toggle-slider {
+  background: #f2f4f7;
 }
 
 input:checked + .toggle-slider {
-  background-color: #7F56D9;
+  background-color: #7f56d9;
 }
 
-.regular input:checked +  .toggle-slider:before {
+.regular input:checked + .toggle-slider:before {
   transform: translateX(16px);
 }
 
-.large  input:checked +  .toggle-slider:before{
+.large input:checked + .toggle-slider:before {
   transform: translateX(20px);
-
 }
 
-.content{
+.content {
   margin-left: 8px;
   text-transform: capitalize;
 }
@@ -95,34 +94,33 @@ input:checked + .toggle-slider {
   width: 28px;
 } */
 
-.toggle-text-regular .text-content{
+.toggle-text-regular .text-content {
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
 }
 
-.toggle-text-regular .label-content{
+.toggle-text-regular .label-content {
   font-size: 10px;
   font-weight: 400;
   line-height: 16px;
   color: #667085;
 }
 
-
-.toggle-text-large .text-content{
+.toggle-text-large .text-content {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
 
-.toggle-text-large .label-content{
+.toggle-text-large .label-content {
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
   color: #667085;
 }
 
-.border{
-  border: 1px solid  #F4EBFF;
+.border {
+  border: 1px solid #f4ebff;
   border-radius: 14px;
 }
