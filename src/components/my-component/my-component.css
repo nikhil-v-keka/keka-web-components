@@ -7,5 +7,13 @@
 }
 
 .test keka-toggle {
-  margin: 30px;
+  /* margin: 30px; */
+}
+
+.test keka-tooltip {
+  margin-left: 400px;
+}
+
+.test .content {
+  width: 500px;
 }

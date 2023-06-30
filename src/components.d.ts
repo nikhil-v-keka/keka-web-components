@@ -23,6 +23,12 @@ export namespace Components {
         "size": string;
         "text": string;
     }
+    interface KekaTooltip {
+        "arrow": boolean;
+        "backgroundColor": string;
+        "position": string;
+        "text": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -59,6 +65,12 @@ declare global {
         prototype: HTMLKekaToggleElement;
         new (): HTMLKekaToggleElement;
     };
+    interface HTMLKekaTooltipElement extends Components.KekaTooltip, HTMLStencilElement {
+    }
+    var HTMLKekaTooltipElement: {
+        prototype: HTMLKekaTooltipElement;
+        new (): HTMLKekaTooltipElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -68,6 +80,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "keka-slider": HTMLKekaSliderElement;
         "keka-toggle": HTMLKekaToggleElement;
+        "keka-tooltip": HTMLKekaTooltipElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -91,6 +104,12 @@ declare namespace LocalJSX {
         "size"?: string;
         "text"?: string;
     }
+    interface KekaTooltip {
+        "arrow"?: boolean;
+        "backgroundColor"?: string;
+        "position"?: string;
+        "text"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -108,6 +127,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "keka-slider": KekaSlider;
         "keka-toggle": KekaToggle;
+        "keka-tooltip": KekaTooltip;
         "my-component": MyComponent;
     }
 }
@@ -117,6 +137,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "keka-slider": LocalJSX.KekaSlider & JSXBase.HTMLAttributes<HTMLKekaSliderElement>;
             "keka-toggle": LocalJSX.KekaToggle & JSXBase.HTMLAttributes<HTMLKekaToggleElement>;
+            "keka-tooltip": LocalJSX.KekaTooltip & JSXBase.HTMLAttributes<HTMLKekaTooltipElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

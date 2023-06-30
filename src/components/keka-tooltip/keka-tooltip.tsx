@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'keka-tooltip',
@@ -6,10 +6,17 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class KekaTooltip {
+  @Prop() text: string = '';
+  @Prop() position: string = 'top';
+  @Prop() arrow: boolean = true;
+  @Prop() backgroundColor: string = 'black';
+
   render() {
     return (
       <Host>
-        <slot></slot>
+        <div class={`tooltip ${this.position}`} display-text={this.text}>
+          <slot></slot>
+        </div>
       </Host>
     );
   }

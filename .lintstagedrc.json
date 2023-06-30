@@ -3,8 +3,7 @@
       "npx prettier --write src"
     ],
     "*.html": [
-   
       "npx prettier --write"
     ],
     "*.css": "npx prettier --write "
-  }
+}

@@ -1,3 +1,108 @@
 :host {
   display: block;
+  width: fit-content;
+  /* width: 300px; */
+}
+
+.tooltip {
+  position: relative;
+  border: 1px dashed #000;
+}
+
+.tooltip:before {
+  content: attr(display-text);
+  position: absolute;
+  width: fit-content;
+  white-space: nowrap;
+  padding: 10px; /* change to 8 12 px */
+  max-width: 400px;
+  border-radius: 4px; /* 8px*/
+  background: #000;
+  color: white;
+  text-align: center;
+  display: none;
+}
+
+.tooltip.right:before {
+  top: 50%;
+  /* to keep in center */
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: 16px; /* change to 16 */
+  /* width: 200px; 
+  tool tipwidth*/
+}
+.tooltip.left:before {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100%;
+  margin-right: 16px;
+}
+
+.tooltip.top:before {
+  left: 50%;
+  margin-top: -5px;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 16px;
+}
+
+.tooltip.bottom:before {
+  left: 50%;
+  margin-top: 20px;
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+.tooltip:after {
+  content: '';
+  position: absolute;
+  border: 10px solid #000;
+  border-color: transparent black transparent transparent;
+  display: none;
+}
+
+.tooltip.right:after {
+  /* position tooltip correctly */
+  left: 100%;
+  margin-left: -3px;
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+  /* the arrow */
+}
+
+.tooltip.left:after {
+  left: 0%;
+  margin-left: -16px;
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+  /* margin-top: -5px; */
+  border-width: 10px 0 10px 10px;
+  border-left-color: #000;
+}
+
+.tooltip.top:after {
+  top: 0%;
+  margin-top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-top-color: #000;
+  border-right-color: transparent;
+}
+
+.tooltip.bottom:after {
+  bottom: 0%;
+  margin-bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 10px;
+  border-right-color: transparent;
+  border-bottom-color: #000;
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: inline; /* displays the content*/
 }
