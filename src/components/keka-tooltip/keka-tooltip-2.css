@@ -14,9 +14,9 @@
   position: absolute;
   width: fit-content;
   white-space: nowrap;
-  padding: 12px;
+  padding: 10px; /* change to 8 12 px */
   max-width: 400px;
-  border-radius: 8px;
+  border-radius: 4px; /* 8px*/
   background: #000;
   color: white;
   text-align: center;
@@ -30,7 +30,7 @@
   left: 100%;
   margin-left: 16px; /* change to 16 */
   /* width: 200px; 
-  tool tipwidth*/
+    tool tipwidth*/
 }
 .tooltip.left:before {
   top: 50%;
@@ -57,7 +57,7 @@
 .tooltip:after {
   content: '';
   position: absolute;
-  border: 8px solid #000;
+  border: 10px solid #000;
   border-color: transparent black transparent transparent;
   display: none;
 }
@@ -65,7 +65,7 @@
 .tooltip.right:after {
   /* position tooltip correctly */
   left: 100%;
-  /* margin-left: -16px; */
+  margin-left: -3px;
   /* vertically center */
   top: 50%;
   transform: translateY(-50%);
@@ -102,12 +102,7 @@
   border-right-color: transparent;
   border-bottom-color: #000;
 }
-
-.tooltip:hover:before {
-  display: inline;
-}
-/* change this in javascript */
-.hovered:hover:before,
-.hovered:hover:after {
-  display: inline;
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: inline; /* displays the content*/
 }

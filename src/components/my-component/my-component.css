@@ -6,14 +6,13 @@
   margin: 20px;
 }
 
-.test keka-toggle {
-  /* margin: 30px; */
+.test .d-flex {
+  display: flex;
 }
 
-.test keka-tooltip {
-  margin-left: 400px;
+.tooltip-elements {
+  margin-left: 500px;
 }
-
-.test .content {
-  width: 500px;
+.tooltip-elements keka-tooltip {
+  padding: 50px;
 }

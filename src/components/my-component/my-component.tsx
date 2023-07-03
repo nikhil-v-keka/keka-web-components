@@ -49,20 +49,24 @@ export class MyComponent {
           <keka-toggle text="nikhil" label="my name is nikhil"></keka-toggle>
         </div>
 
-        <keka-tooltip position="top" text="this is a sample tool tip mainlu used for testing purpose in our component">
-          <h1>hi hello</h1>
-        </keka-tooltip>
+        <div class="tooltip-elements d-flex">
+          <keka-tooltip position="left" text="this is a sample tool tip mainlu used for testing purpose in our component" arrow={false}>
+            <div>
+              <h1>Hi hello </h1>
+            </div>
+          </keka-tooltip>
 
-        <keka-tooltip text="This is a tooltip" position="bottom">
-          <button>Hover Me</button>
-        </keka-tooltip>
+          <keka-tooltip text="This is a tooltip" position="right" backgroundColor="white">
+            <button>Hover Me</button>
+          </keka-tooltip>
 
-        <keka-tooltip position="bottom" text="manage you skills">
-          <div class="content">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus consectetur minima cupiditate eaque perferendis unde vel optio vero odio molestias ad ut
-            iure, blanditiis quasi nobis aspernatur explicabo iste?
-          </div>
-        </keka-tooltip>
+          {/* <keka-tooltip position="bottom" text="manage you skills">
+              <div class="content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus consectetur minima cupiditate eaque perferendis unde vel optio vero odio molestias ad ut
+                iure, blanditiis quasi nobis aspernatur explicabo iste?
+              </div>
+            </keka-tooltip> */}
+        </div>
         <p></p>
       </div>
     );

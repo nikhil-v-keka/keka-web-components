@@ -1,24 +1,25 @@
 :host {
   display: block;
+  --primary-color: #7f56d9;
+  --background-color: #eaecf0;
+  --thumb-color: #fff;
 }
 
 .wrapper {
   width: 320px;
-  margin: 0px;
-  padding: 0px;
 }
 
 .slider {
   height: 8px;
   position: relative;
-  background: #eaecf0;
+  background: var(--background-color);
   border-radius: 4px;
 }
 .slider .progress {
   height: 100%;
   position: absolute;
   border-radius: 4px;
-  background: #7f56d9;
+  background: var(--primary-color);
 }
 .slider-range-input {
   position: relative;
@@ -39,8 +40,8 @@ input[type='range']::-webkit-slider-thumb {
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background: #fff;
-  border: 1px solid #7f56d9;
+  background: var(--thumb-color);
+  border: 1px solid var(--primary-color);
   pointer-events: auto;
   -webkit-appearance: none;
 }
@@ -48,8 +49,8 @@ input[type='range']::-moz-range-thumb {
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background: #fff;
-  border: 1px solid #7f56d9;
+  background: var(--thumb-color);
+  border: 1px solid var(--primary-color);
   pointer-events: auto;
   -moz-appearance: none;
 }
@@ -61,8 +62,6 @@ input[type='range']::-moz-range-thumb {
   line-height: 24px;
   display: flex;
   font-weight: 500;
-  font: 'SF Pro';
-  /* margin: 8px; */
 }
 
 .left-value {

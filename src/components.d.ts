@@ -15,6 +15,9 @@ export namespace Components {
         "right": number;
         "tooltip": boolean;
     }
+    interface KekaTestTooltip {
+        "text": string;
+    }
     interface KekaToggle {
         "bordered": boolean;
         "disabled": boolean;
@@ -59,6 +62,12 @@ declare global {
         prototype: HTMLKekaSliderElement;
         new (): HTMLKekaSliderElement;
     };
+    interface HTMLKekaTestTooltipElement extends Components.KekaTestTooltip, HTMLStencilElement {
+    }
+    var HTMLKekaTestTooltipElement: {
+        prototype: HTMLKekaTestTooltipElement;
+        new (): HTMLKekaTestTooltipElement;
+    };
     interface HTMLKekaToggleElement extends Components.KekaToggle, HTMLStencilElement {
     }
     var HTMLKekaToggleElement: {
@@ -79,6 +88,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "keka-slider": HTMLKekaSliderElement;
+        "keka-test-tooltip": HTMLKekaTestTooltipElement;
         "keka-toggle": HTMLKekaToggleElement;
         "keka-tooltip": HTMLKekaTooltipElement;
         "my-component": HTMLMyComponentElement;
@@ -94,6 +104,9 @@ declare namespace LocalJSX {
         "onRangeChanged"?: (event: KekaSliderCustomEvent<number[]>) => void;
         "right"?: number;
         "tooltip"?: boolean;
+    }
+    interface KekaTestTooltip {
+        "text"?: string;
     }
     interface KekaToggle {
         "bordered"?: boolean;
@@ -126,6 +139,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "keka-slider": KekaSlider;
+        "keka-test-tooltip": KekaTestTooltip;
         "keka-toggle": KekaToggle;
         "keka-tooltip": KekaTooltip;
         "my-component": MyComponent;
@@ -136,6 +150,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "keka-slider": LocalJSX.KekaSlider & JSXBase.HTMLAttributes<HTMLKekaSliderElement>;
+            "keka-test-tooltip": LocalJSX.KekaTestTooltip & JSXBase.HTMLAttributes<HTMLKekaTestTooltipElement>;
             "keka-toggle": LocalJSX.KekaToggle & JSXBase.HTMLAttributes<HTMLKekaToggleElement>;
             "keka-tooltip": LocalJSX.KekaTooltip & JSXBase.HTMLAttributes<HTMLKekaTooltipElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
