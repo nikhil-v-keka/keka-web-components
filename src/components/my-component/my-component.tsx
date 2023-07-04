@@ -50,7 +50,27 @@ export class MyComponent {
         </div>
 
         <div class="tooltip-elements d-flex">
-          <keka-tooltip position="left" text="this is a sample tool tip mainlu used for testing purpose in our component" arrow={false}>
+          <keka-test-tooltip
+            position="bottom"
+            text="<h4>Hi hello</h4>
+          <p>
+            my name is nikhil
+          </p>"
+            arrow={false}
+            theme="dark"
+          >
+            <div>
+              <h3>Hi hello </h3>
+            </div>
+          </keka-test-tooltip>
+
+          <keka-test-tooltip text="This is a tooltip" position="bottom" theme="dark">
+            <button>Hover Me</button>
+          </keka-test-tooltip>
+        </div>
+
+        <div class="tooltip-elements d-flex">
+          <keka-tooltip position="left" text="this is a sample tool tip mainlu used for testing purpose in our component" arrow={false} width="400px">
             <div>
               <h1>Hi hello </h1>
             </div>
@@ -59,14 +79,8 @@ export class MyComponent {
           <keka-tooltip text="This is a tooltip" position="right" backgroundColor="white">
             <button>Hover Me</button>
           </keka-tooltip>
-
-          {/* <keka-tooltip position="bottom" text="manage you skills">
-              <div class="content">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam accusamus consectetur minima cupiditate eaque perferendis unde vel optio vero odio molestias ad ut
-                iure, blanditiis quasi nobis aspernatur explicabo iste?
-              </div>
-            </keka-tooltip> */}
         </div>
+
         <p></p>
       </div>
     );

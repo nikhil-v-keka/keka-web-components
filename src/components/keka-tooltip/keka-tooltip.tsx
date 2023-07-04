@@ -8,15 +8,20 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
 export class KekaTooltip {
   @Prop() text: string = '';
   @Prop() position: string = 'top';
-  @Prop() arrow: boolean = false;
+  @Prop() arrow: boolean = true;
   @Prop() backgroundColor: string = 'black';
-
+  @Prop() width: string = '300px';
   @Element() hostElement: HTMLElement;
 
   componentDidLoad() {
     if (this.arrow) {
       this.addHoverEffect();
     }
+    console.log(window.getComputedStyle(this.hostElement.querySelector('.tooltip'), ':before').getPropertyValue('width'));
+
+    // console.log( window.getComputedStyle(
+    //   document.querySelector('.tooltip'), ':before'
+    // ));
   }
 
   addHoverEffect() {
@@ -33,7 +38,7 @@ export class KekaTooltip {
   render() {
     return (
       <Host>
-        <div class={`tooltip ${this.position}`} display-text={this.text}>
+        <div class={`tooltip ${this.position}`} display-text={this.text} tooltip-width={this.width}>
           <slot></slot>
         </div>
       </Host>

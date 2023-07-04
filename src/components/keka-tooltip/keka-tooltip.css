@@ -1,6 +1,7 @@
 :host {
   display: block;
-  width: fit-content;
+  /* width: fit-content; */
+  position: relative;
   /* width: 300px; */
 }
 
@@ -11,11 +12,11 @@
 
 .tooltip:before {
   content: attr(display-text);
+  max-width: fit-content;
   position: absolute;
-  width: fit-content;
-  white-space: nowrap;
   padding: 12px;
-  max-width: 400px;
+  /* width: 200px; */
+  height: auto;
   border-radius: 8px;
   background: #000;
   color: white;
@@ -29,8 +30,7 @@
   transform: translateY(-50%);
   left: 100%;
   margin-left: 16px; /* change to 16 */
-  /* width: 200px; 
-  tool tipwidth*/
+  /* tool tipwidth*/
 }
 .tooltip.left:before {
   top: 50%;
@@ -95,7 +95,7 @@
 
 .tooltip.bottom:after {
   bottom: 0%;
-  margin-bottom: -20px;
+  margin-bottom: -16px;
   left: 50%;
   transform: translateX(-50%);
   border-width: 0 10px 10px;
@@ -106,7 +106,7 @@
 .tooltip:hover:before {
   display: inline;
 }
-/* change this in javascript */
+
 .hovered:hover:before,
 .hovered:hover:after {
   display: inline;

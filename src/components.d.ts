@@ -16,7 +16,11 @@ export namespace Components {
         "tooltip": boolean;
     }
     interface KekaTestTooltip {
+        "arrow": boolean;
+        "position": string;
         "text": string;
+        "theme": string;
+        "width": string;
     }
     interface KekaToggle {
         "bordered": boolean;
@@ -31,6 +35,7 @@ export namespace Components {
         "backgroundColor": string;
         "position": string;
         "text": string;
+        "width": string;
     }
     interface MyComponent {
         /**
@@ -106,7 +111,11 @@ declare namespace LocalJSX {
         "tooltip"?: boolean;
     }
     interface KekaTestTooltip {
+        "arrow"?: boolean;
+        "position"?: string;
         "text"?: string;
+        "theme"?: string;
+        "width"?: string;
     }
     interface KekaToggle {
         "bordered"?: boolean;
@@ -122,6 +131,7 @@ declare namespace LocalJSX {
         "backgroundColor"?: string;
         "position"?: string;
         "text"?: string;
+        "width"?: string;
     }
     interface MyComponent {
         /**

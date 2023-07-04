@@ -13,6 +13,8 @@
 .tooltip-elements {
   margin-left: 500px;
 }
-.tooltip-elements keka-tooltip {
+.tooltip-elements keka-tooltip,
+.tooltip-elements keka-test-tooltip {
   padding: 50px;
+  /* background-color: aquamarine; */
 }
