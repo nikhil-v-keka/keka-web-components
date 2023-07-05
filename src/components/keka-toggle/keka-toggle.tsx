@@ -32,10 +32,12 @@ export class KekaToggle {
     return (
       <Host class={'d-flex'}>
         <div>
-          <label class={`toggle ${this.size === 'regular' ? 'regular' : 'large'} ${this.bordered ? 'border' : ''}`}>
-            <input type="checkbox" disabled={this.disabled} onClick={() => this.toggleInput.emit(this.checkboxElement.checked)} />
-            <span class="toggle-slider"></span>
-          </label>
+          <keka-test-tooltip text="this is a toggle" theme="dark" position="top">
+            <label class={`toggle ${this.size === 'regular' ? 'regular' : 'large'} ${this.bordered ? 'border' : ''}`}>
+              <input type="checkbox" disabled={this.disabled} onClick={() => this.toggleInput.emit(this.checkboxElement.checked)} />
+              <span class="toggle-slider"></span>
+            </label>
+          </keka-test-tooltip>
         </div>
         <div class={`${this.size === 'regular' ? 'toggle-text-regular' : 'toggle-text-large'} content`}>
           <div class="text-content">{this.text}</div>

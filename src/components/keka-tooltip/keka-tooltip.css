@@ -16,6 +16,8 @@
   position: absolute;
   padding: 12px;
   /* width: 200px; */
+  width: max-content;
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
   background: #000;

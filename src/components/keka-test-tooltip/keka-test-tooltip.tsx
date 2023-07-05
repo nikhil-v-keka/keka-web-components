@@ -9,8 +9,8 @@ export class KekaTestTooltip {
   @Prop() text: string = '';
   @Prop() position: string = 'top';
   @Prop() arrow: boolean = true;
-  @Prop() width: string = '300px';
   @Prop() theme: string = 'dark';
+
   @Element() hostElement: HTMLElement;
 
   componentWillLoad() {
@@ -24,9 +24,8 @@ export class KekaTestTooltip {
     // if(this.arrow){
     //   this.addHoverEffect();
     // }
-    console.log(this.hostElement.shadowRoot.querySelector('.tooltip'));
 
-    this.hostElement.shadowRoot.querySelector('.tooltip').innerHTML += this.text;
+    this.hostElement.shadowRoot.querySelector('.tooltip').innerHTML = this.text;
   }
 
   render() {
@@ -36,7 +35,7 @@ export class KekaTestTooltip {
           <div class="tooltip-trigger">
             <slot></slot>
           </div>
-          <div class={`tooltip ${this.position} shadow`}></div>
+          <div class={`tooltip ${this.position} ${this.theme === 'light' ? 'shadow' : ''}  ${this.arrow ? '' : 'no-arrow'}`}></div>
         </div>
       </Host>
     );

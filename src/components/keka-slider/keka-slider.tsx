@@ -3,7 +3,7 @@ import { Component, EventEmitter, h, Host, Prop, Event, Element, State } from '@
 @Component({
   tag: 'keka-slider',
   styleUrl: 'keka-slider.css',
-  shadow: false,
+  shadow: true,
 })
 export class KekaSlider {
   @Prop() minValue = 0;
@@ -29,9 +29,9 @@ export class KekaSlider {
   }
 
   componentDidLoad() {
-    this.progressElement = this.el.querySelector('.progress') as HTMLElement;
-    this.rangeInputELements = Array.from(this.el.querySelectorAll('.range-input'), ele => ele as HTMLInputElement);
-    this.progressValueElements = Array.from(this.el.querySelectorAll('.display'), ele => ele as HTMLElement);
+    this.progressElement = this.el.shadowRoot.querySelector('.progress') as HTMLElement;
+    this.rangeInputELements = Array.from(this.el.shadowRoot.querySelectorAll('.range-input'), ele => ele as HTMLInputElement);
+    this.progressValueElements = Array.from(this.el.shadowRoot.querySelectorAll('.display'), ele => ele as HTMLElement);
     this.setProgressBar();
     if (this.displayValues) this.setSliderValues();
   }
@@ -81,8 +81,21 @@ export class KekaSlider {
             <div class="progress"></div>
           </div>
           <div class="slider-range-input">
-            <input type="range" id="rangeMin" class="range-input range-min" min={this.minValue} max={this.maxValue} value={this.left} onInput={this.onRangeInput.bind(this)} />
+            {/* <keka-test-tooltip
+                text={this.leftPercentage.toString()}
+                position='top'
+                theme='dark'>
+                      <input type="range" id="rangeMin" class="range-input range-min" min={this.minValue} max={this.maxValue} value={this.left} onInput={this.onRangeInput.bind(this)} />
+                </keka-test-tooltip>
 
+                <keka-test-tooltip
+                text={this.rightPercentage.toString()}
+                position='top'
+                theme='dark'>
+                      <input type="range" id="rangeMax" class="range-input range-max" min={this.minValue} max={this.maxValue} value={this.right} onInput={this.onRangeInput.bind(this)} />
+                </keka-test-tooltip> */}
+
+            <input type="range" id="rangeMin" class="range-input range-min" min={this.minValue} max={this.maxValue} value={this.left} onInput={this.onRangeInput.bind(this)} />
             <input type="range" id="rangeMax" class="range-input range-max" min={this.minValue} max={this.maxValue} value={this.right} onInput={this.onRangeInput.bind(this)} />
           </div>
           {this.displayValues ? (

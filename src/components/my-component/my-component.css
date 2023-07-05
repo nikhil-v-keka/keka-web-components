@@ -16,5 +16,11 @@
 .tooltip-elements keka-tooltip,
 .tooltip-elements keka-test-tooltip {
   padding: 50px;
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
+}
+
+.test-tooltip {
+  margin: auto;
+  width: 50%;
+  margin-bottom: 200px;
 }

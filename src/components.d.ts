@@ -20,7 +20,6 @@ export namespace Components {
         "position": string;
         "text": string;
         "theme": string;
-        "width": string;
     }
     interface KekaToggle {
         "bordered": boolean;
@@ -115,7 +114,6 @@ declare namespace LocalJSX {
         "position"?: string;
         "text"?: string;
         "theme"?: string;
-        "width"?: string;
     }
     interface KekaToggle {
         "bordered"?: boolean;

@@ -33,6 +33,7 @@ export class MyComponent {
   getToggleValue(event: CustomEvent) {
     console.log(event.detail);
   }
+
   render() {
     return (
       <div class="test">
@@ -51,37 +52,42 @@ export class MyComponent {
 
         <div class="tooltip-elements d-flex">
           <keka-test-tooltip
-            position="bottom"
             text="<h4>Hi hello</h4>
           <p>
-            my name is nikhil
+            my name is nikhil 
           </p>"
-            arrow={false}
-            theme="dark"
+            position="right"
           >
             <div>
               <h3>Hi hello </h3>
             </div>
           </keka-test-tooltip>
 
-          <keka-test-tooltip text="This is a tooltip" position="bottom" theme="dark">
+          <keka-test-tooltip text="Unpaid Leave - Leave deducted as no attendance logged for 01-07-2023" position="top" theme="light" arrow={false}>
             <button>Hover Me</button>
           </keka-test-tooltip>
         </div>
 
         <div class="tooltip-elements d-flex">
-          <keka-tooltip position="left" text="this is a sample tool tip mainlu used for testing purpose in our component" arrow={false} width="400px">
+          <keka-tooltip position="bottom" text="this is a sample tool tip mainlu used for testing purpose in our component" arrow={false}>
             <div>
               <h1>Hi hello </h1>
             </div>
           </keka-tooltip>
 
-          <keka-tooltip text="This is a tooltip" position="right" backgroundColor="white">
+          <keka-tooltip text="This is a tooltip" position="left" backgroundColor="white">
             <button>Hover Me</button>
           </keka-tooltip>
         </div>
 
         <p></p>
+        <div class="test-tooltip">
+          <keka-tooltip text="hi hello, sample ">Hover me </keka-tooltip>
+          <br />
+          <keka-test-tooltip text="hi hello , my name is nikhil" position="top-left">
+            <span>Hi hello , sample text for tooltip</span>
+          </keka-test-tooltip>
+        </div>
       </div>
     );
   }
